@@ -1,0 +1,35 @@
+{% include 'header.html' %}
+
+{% block body %}
+<table class="table">
+    <div class="col">
+        <div class="col-15-xs">
+            <tr>
+                {% for column_name in columns%}
+                <td><b>{{ column_name }}</b></td>
+                {% endfor %}
+                <th></th>
+            </tr>
+        </div>
+    </div>
+    {% for id in data.keys()%}
+    <tr>
+        {% for key, value in data[id].items() %}
+        {% if key == 'Name Tag' %}
+        <td>{{ value[:30] }}</td>
+        {% else %}
+        <td>{{ value }}</td>
+        {% endif %}
+        {% endfor %}
+        <th></th>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+
+{% include 'footer.html' %}
+
+</html>
+
+<!-- 

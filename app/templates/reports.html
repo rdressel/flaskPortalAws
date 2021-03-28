@@ -1,0 +1,46 @@
+{% include 'header.html' %}
+
+<div class="section-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-container-spacer text-center">
+                    <h1 class="h2">Reports</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <form action="submit_report" class="reveal-content" method="post">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <input class="form-control" id="email" name="email" placeholder="Email"
+                                               type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="subject" name="subject" placeholder="Subject"
+                                               type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="Enter your message"
+                                                  rows="5"></textarea>
+                                    </div>
+                                    <button class="btn btn-default btn-lg" name="message" type="submit">Send</button>
+                                </div>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% include 'footer.html' %}
+
+
+</html>

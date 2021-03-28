@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<!--
+	AWS Americas Portal
+-->
+<html>
+<head>
+    <title>AWS Americas Portal</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+    <link href="static/assets/css/main.css" rel="stylesheet"/>
+</head>
+<body class="homepage is-preload">
+<div id="page-wrapper">
+    <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            {% if current_user.is_authenticated %}
+            <li class="current"><a href="{{ url_for('main.index') }}">Home</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li>
+                <a href="#">Reports</a>
+                <ul>
+                    <li><a href="/reports-ec2instances">Ec2 Instances by Account</a></li>
+                    <li><a href="#">Magna phasellus</a></li>
+                    <li>
+                        <a href="#">Phasellus consequat</a>
+                        <ul>
+                            <li><a href="#">More Ec2 reports...</a></li>
+                            <li><a href="#">More Ec2 reports...</li>
+                            <li><a href="#">More Ec2 reports...</a></li>
+                            <li><a href="#">More Ec2 reports...</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Veroeros feugiat</a></li>
+                </ul>
+            </li>
+            {% endif %}
+            {% if not current_user.is_authenticated %}
+            <li><a class="navbar-item" href="{{ url_for('auth.login') }}">Login</a></li>
+            <li><a class="navbar-item" href="{{ url_for('auth.signup') }}">Sign Up</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li><a href="left-sidebar.html">Left Sidebar</a></li>
+            <li><a href="right-sidebar.html">Right Sidebar</a></li>
+            <li><a href="no-sidebar.html">No Sidebar</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li><a class="navbar-item" href="{{ url_for('auth.logout') }}">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <!-- Scripts -->
+    <script src="static/assets/js/jquery.min.js"></script>
+    <script src="static/assets/js/jquery.dropotron.min.js"></script>
+    <script src="static/assets/js/jquery.scrolly.min.js"></script>
+    <script src="static/assets/js/browser.min.js"></script>
+    <script src="static/assets/js/breakpoints.min.js"></script>
+    <script src="static/assets/js/util.js"></script>
+    <script src="static/assets/js/main.js"></script>

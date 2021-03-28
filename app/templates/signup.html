@@ -1,0 +1,55 @@
+<!-- templates/signup.html -->
+
+{% include "header.html" %}
+
+{% block content %}
+
+<section id="banner">
+    <div class="content">
+        <h2>Welcome to the Americas AWS Portal</h2>
+
+        <div class="section-container ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="section-container-spacer text-center">
+                            <h1 class="h2">Login</h1>
+                        </div>
+                        <div class="box">
+                            {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            <div class="notification is-danger">
+                                {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
+                            </div>
+                            {% endif %}
+                            {% endwith %}
+                            <form action="/signup" method="POST">
+                                <div class="field">
+                                    <div class="control">
+                                        <input autofocus="" class="input is-large" name="email" placeholder="Email"
+                                               type="email">
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <div class="control">
+                                        <input autofocus="" class="input is-large" name="name" placeholder="Name"
+                                               type="text">
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input is-large" name="password" placeholder="Password"
+                                               type="password">
+                                    </div>
+                                </div>
+
+                                <button class="button is-block is-info is-large is-fullwidth">Sign Up</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+</section>
+{% endblock %}
+{% include 'footer.html' %}
